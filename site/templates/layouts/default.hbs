@@ -17,7 +17,7 @@
 
     <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
   </head>
-  <body class="atomicguide">
+  <body class="atomic">
     <header role="banner">
       {{> logo}}
       {{> nav}}
@@ -38,11 +38,11 @@
 
     {{#is 'index' this.basename}}
     <!-- build:js js/build/builder.min.js -->
-    <script src="js/lib/scrollmagic-anchornav.js?v3.0.0"></script>
-    <script src="js/src/scrollmation-config.js?v3.0.0"></script>
-    <script src="js/lib/prism.js?v3.0.0"></script>
-    <script src="js/src/markup-generator.js?v3.0.0"></script>
-    <script src="js/src/colorcodes.js?v3.0.0"></script>
+    <script src="js/lib/scrollmagic.js?v1.0.0"></script>
+    <script src="js/src/scrollmation-config.js?v1.0.0"></script>
+    <script src="js/lib/prism.js?v1.0.0"></script>
+    <script src="js/src/atomic-generator.js?v1.0.0"></script>
+    <script src="js/src/atomic-swatch.js?v1.0.0"></script>
     <!-- endbuild -->
     {{/is}}
 

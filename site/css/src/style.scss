@@ -17,7 +17,7 @@ $tks-colors: (
   picton-blue: #3EA9F5,
   azure-radiance: #00A5F9,
 
-  comet: #5B5F7C, 
+  comet: #5B5F7C,
 
   geraldine: #FF8589,
   froly: #EF7379,
@@ -32,5 +32,5 @@ $tks-colors: (
 
 @import "assembler/globals";
 @import "assembler/prism";
-@import "assembler/color-blocks";
+@import "assembler/atomic-swatch";
 @import "assembler/index";

@@ -7,33 +7,25 @@ var controller = new ScrollMagic({
   }
 });
 
-new ScrollScene({triggerElement: '#colors'})
-                .setClassToggle('#tks-anchor-color', 'active')
+var atomic_scrollinks = {
+  // [hash-value] : [link-id]
+  'atomic-colors': 'atomic-colors',
+  icons: 'icons',
+  helpers: 'helpers',
+  utilities: 'utility',
+  typography: 'typography',
+  buttons: 'buttons',
+  forms: 'forms',
+  navigation: 'nav',
+  patterns: 'patterns'
+}
+
+
+for (var prop in atomic_scrollinks) {
+  new ScrollScene({triggerElement: '#' + prop})
+                .setClassToggle('#' + atomic_scrollinks[prop], 'active')
                 .addTo(controller);
-new ScrollScene({triggerElement: '#icons'})
-                .setClassToggle('#tks-anchor-icons', 'active')
-                .addTo(controller);
-new ScrollScene({triggerElement: '#helpers'})
-                .setClassToggle('#tks-anchor-helpers', 'active')
-                .addTo(controller);
-new ScrollScene({triggerElement: '#utilities'})
-                .setClassToggle('#tks-anchor-utility', 'active')
-                .addTo(controller);
-new ScrollScene({triggerElement: '#typography'})
-                .setClassToggle('#tks-anchor-typography', 'active')
-                .addTo(controller);
-new ScrollScene({triggerElement: '#buttons'})
-                .setClassToggle('#tks-anchor-buttons', 'active')
-                .addTo(controller);
-new ScrollScene({triggerElement: '#forms'})
-                .setClassToggle('#tks-anchor-forms', 'active')
-                .addTo(controller);
-new ScrollScene({triggerElement: '#navigation'})
-                .setClassToggle('#tks-anchor-nav', 'active')
-                .addTo(controller);
-new ScrollScene({triggerElement: '#patterns'})
-                .setClassToggle('#tks-anchor-patterns', 'active')
-                .addTo(controller);
+}
 
 // Change behaviour of controller
 // to animate scroll instead of jump
