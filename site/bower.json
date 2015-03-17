@@ -1,0 +1,21 @@
+{
+  "name": "atomic-guide",
+  "version": "1.0.0",
+  "authors": [
+    "grayghostvisuals <grayghost@grayghostvisuals.com>"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "normalize-css": "~3.0.2",
+    "typeplate-starter-kit": "~2.1.0",
+    "jquery": "~2.1.3"
+  }
+}

@@ -1,0 +1,57 @@
+html {
+  background: #F6F7F9;
+}
+
+#colors {
+  svg:hover {
+    cursor: pointer;
+  }
+}
+
+
+body.atomicguide > main[role="main"] .row {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin: 10px 10px 20px;
+  padding: 40px 20px 40px;
+  background: white;
+
+  @media screen and (min-width: 810px) {
+    margin: 10px 0 20px;
+    padding: 40px 40px 40px;
+  }
+
+  .typl8-zeta {
+    margin: 16px 0;
+    color: #9A9A9A;
+  }
+}
+
+
+body.atomicguide .hex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 500;
+
+  p {
+    font-size: 3.25rem;
+    color: rgba(0, 0, 0, 0.42);
+  }
+
+  b {
+    display: inline-block;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    text-transform: lowercase;
+    color: rgba(0, 0, 0, 0.38);
+  }
+}

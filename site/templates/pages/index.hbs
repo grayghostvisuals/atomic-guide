@@ -1,0 +1,145 @@
+---
+basename: index
+title: Atomic Guide
+description: studying stuff
+---
+<section class="row" id="intro">
+  <h4>The Atomic Guide</h4>
+  <p>This guide was intended to help analyze a system's interface from a molecular level and builds upon the thoughts and writings of <a href="//bradfrost.com/blog/post/atomic-web-design/">Brad Frost</a>. Use this styleguide as a reference in order to help build out and structure a system of highly reusable components.</p>
+</section>
+
+<!-- #Colors -->
+<section class="row" id="colors">
+  <header>
+    <h1 class="typl8-delta">Colors</h1>
+  </header>
+
+  <p>Click on any color swatch to retrieve it's hex value.</p>
+  {{> color-blocks}}
+</section>
+
+<!-- #Icons -->
+<section class="row" id="icons">
+  <header>
+    <h1 class="typl8-delta">Icons</h1>
+  </header>
+</section>
+
+<!-- #Helpers -->
+<section class="row" id="helpers">
+  <header>
+    <h1 class="typl8-delta">Helper Classes</h1>
+  </header>
+</section>
+
+<!-- #Utilities -->
+<section class="row" id="utilities">
+  <header>
+    <h1 class="typl8-delta">Utility Classes</h1>
+  </header>
+
+  <h2 class="typl8-zeta">Clearfix</h2>
+  <pre class="language-scss"><code>.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }</code></pre>
+</section>
+
+<!-- #Typography -->
+<section class="row" id="typography">
+  <header>
+    <h1 class="typl8-delta">Typography</h1>
+  </header>
+
+  <h2 class="typl8-zeta">Typescale (<a href="http://www.modularscale.com/?14&px&2.5&js&text">modularscale</a>)</h2>
+  <p>14, 16, 21, 31.5, 35, 47.5, 60, 72, 90</p>
+
+  <h2 class="typl8-zeta">Font</h2>
+  <pre class="language-scss"><code>font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;</code></pre>
+
+  <h2 class="typl8-zeta">Headings</h2>
+  {{> headings}}
+  <pre class="language-html"><code>{{> headings}}</code></pre>
+
+  <h2 class="typl8-zeta">Paragraphs</h2>
+  {{> paragraphs}}
+  {{> paragraphs}}
+  <pre class="language-html"><code>{{> paragraphs}}</code></pre>
+
+  <h2 class="typl8-zeta">Anchors</h2>
+  {{> anchors}}
+  <pre class="language-html"><code>{{> anchors}}</code></pre>
+
+  <h2 class="typl8-zeta">Unordered List</h2>
+  {{> unordered-list}}
+  <pre class="language-html"><code>{{> unordered-list}}</code></pre>
+</section>
+
+<!-- #Buttons -->
+<section class="row" id="buttons">
+  <header>
+    <h1 class="typl8-delta">Buttons</h1>
+  </header>
+
+  <h2 class="typl8-zeta">Default</h2>
+  {{> default-button}}
+  <pre class="language-html"><code>{{> default-button}}</code></pre>
+</section>
+
+<!-- #Forms -->
+<section class="row" id="forms">
+  <header>
+    <h1 class="typl8-delta">Forms</h1>
+  </header>
+
+  <h2 class="typl8-zeta">Text Field Input w/label <a href="/text-input.html">view single case study</a></h2>
+  {{> text-input}}
+  <pre class="language-html"><code>{{> text-input}}</code></pre>
+
+  <h2 class="typl8-zeta">Search</h2>
+  {{> search}}
+  <pre class="language-html"><code>{{> search}}</code></pre>
+
+  <h2 class="typl8-zeta">Phone</h2>
+  {{> tel-input}}
+  <pre class="language-html"><code>{{> tel-input}}</code></pre>
+
+  <h2 class="typl8-zeta">Email</h2>
+  {{> email-input}}
+  <pre class="language-html"><code>{{> email-input}}</code></pre>
+
+  <h2 class="typl8-zeta">Password</h2>
+  {{> password-input}}
+  <pre class="language-html"><code>{{> password-input}}</code></pre>
+
+  <h2 class="typl8-zeta">Radio</h2>
+  {{> radio-input radio}}
+  {{> radio-input radio.a}}
+  {{> radio-input radio.b}}
+  <pre class="language-html"><code>{{> radio-input radio}}</code></pre>
+
+  <!-- http://demosthenes.info/blog/923/Using-The-HTML5-Date-Input -->
+  <h2 class="typl8-zeta">Date Picker</h2>
+  {{> datepicker}}
+  <pre class="language-html"><code>{{> datepicker}}</code></pre>
+  <pre class="language-css"><code>::-webkit-datetime-edit
+::-webkit-datetime-edit-fields-wrapper
+::-webkit-datetime-edit-text
+::-webkit-datetime-edit-month-field
+::-webkit-datetime-edit-day-field
+::-webkit-datetime-edit-year-field
+::-webkit-inner-spin-button
+::-webkit-calendar-picker-indicator</code></pre>
+</section>
+
+<!-- #Navigation -->
+<section class="row" id="navigation">
+  <header>
+    <h1 class="typl8-delta">Navigation</h1>
+  </header>
+</section>
+
+<!-- #Patterns -->
+<section class="row" id="patterns">
+  <header>
+    <h1 class="typl8-delta">Patterns</h1>
+  </header>
+</section>

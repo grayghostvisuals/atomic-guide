@@ -1,0 +1,36 @@
+// App Variables
+// ===============================================
+
+$tks-colors: (
+  white: #FFFFFF,
+  athens-gray: #F7F7F8,
+  gallery: #EEEEEE,
+  heather: #BFCCD7,
+
+  silver: #CDCDCD,
+  alto: #CECECE,
+  dusty-gray: #9A9A9A,
+  gray: #878787,
+  boulder: #787878,
+  dove-gray: #656565,
+
+  picton-blue: #3EA9F5,
+  azure-radiance: #00A5F9,
+
+  comet: #5B5F7C, 
+
+  geraldine: #FF8589,
+  froly: #EF7379,
+  carnation: #F14F4F,
+
+  pastel-green: #50DC61
+);
+
+
+// Atomic Guide
+// ===============================================
+
+@import "assembler/globals";
+@import "assembler/prism";
+@import "assembler/color-blocks";
+@import "assembler/index";
