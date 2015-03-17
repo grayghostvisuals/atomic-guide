@@ -28,5 +28,4 @@ $ npm start
 ns-component
 ns-component--modifier
 ns-component__child--modifier
-```ponent._modifier {…}
 ```
