@@ -203,15 +203,15 @@ pre[class*='language-'] > code[data-language] {
   background-repeat: no-repeat;
   background-position: center center;
 }
-// pre[class*='language-'] > code[data-language]::before {
-//   content: attr(data-language);
-//   color: black;
-//   background-color: #CFCFCF;
-//   display: inline-block;
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   font-size: 0.9em;
-//   padding: 0 0.5em;
-//   text-shadow: none;
-// }
+pre[class*='language-'] > code[data-language]::before {
+  content: attr(data-language);
+  color: black;
+  background-color: #CFCFCF;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.9em;
+  padding: 0 0.5em;
+  text-shadow: none;
+}

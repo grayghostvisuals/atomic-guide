@@ -22,14 +22,24 @@ function atomicRgb2Hex(rgb) {
     ('0' + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
 }
 
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+  } : null;
+}
+
 
 // Color Swatch Event
 // ======================================================
 
 $('#atomic-colors svg').on('click', function(e) {
 
-  var atomic_hexvalue   = atomicRgb2Hex( $(this).css('fill') ),
-      atomic_rgbchannel = $(this).css('fill'),
+  var atomic_fill       = $(this).css('fill'),
+      atomic_hexvalue   = atomicRgb2Hex( atomic_fill ),
+      atomic_rgbchannel = atomic_fill,
       atomic_rgb        = atomic_rgbchannel;
 
   atomic_rgbchannel = atomic_rgb.substring(4, atomic_rgb.length-1)
@@ -38,12 +48,8 @@ $('#atomic-colors svg').on('click', function(e) {
 
   $atomic_hexoverlay.addClass('_active');
 
-  // Apparently lte IE10 and Webkit displays the hex value which is what is authored
-  // from the CSS, but apparently Chrome and Firefox believe they abide by the standard
-  // and serialize the CSS values correctly.
-  // http://www.w3.org/TR/cssom/#serialize-a-css-value
-  // https://twitter.com/jaffathecake/status/578556416283267072
-
+  // http://www.w3.org/TR/cssom/#dom-window-getcomputedstyle
+  // https://twitter.com/gryghostvisuals/status/578524169719123969
   if(atomic_rgbchannel.length === 3) {
 
     $atomic_hexoverlay.css({
@@ -56,13 +62,14 @@ $('#atomic-colors svg').on('click', function(e) {
 
     $(this).each(function(i) {
 
-      var atomic_hexcolor = window.getComputedStyle(this).getPropertyValue('fill');
+      var atomic_hex = window.getComputedStyle(this).getPropertyValue('fill'),
+          atomic_rgb = hexToRgb(atomic_hex);
 
       $atomic_hexoverlay.css({
-        'background' : atomic_hexcolor
+        'background' : 'rgba('+ atomic_rgb.r + ',' + atomic_rgb.g + ',' + atomic_rgb.b +', .95)'
       });
 
-      $atomic_hexoverlay.html('<p>' + atomic_hexcolor + '</p><b>Click Hex Code to Copy</b>');
+      $atomic_hexoverlay.html('<p>' + atomic_hex + '</p><b>Click Hex Code to Copy</b>');
 
     });
 

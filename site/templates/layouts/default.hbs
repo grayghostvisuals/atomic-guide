@@ -36,6 +36,10 @@
     <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.js"><\/script>')</script>
     {{/any}}
 
+    <script class="atomic-js">$('button').on('click', function() {
+  console.log('hello world');
+})</script>
+
     {{#is 'index' this.basename}}
     <!-- build:js js/build/builder.min.js -->
     <script src="js/lib/scrollmagic.js?v1.0.0"></script>

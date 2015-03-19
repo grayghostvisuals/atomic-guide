@@ -1,4 +1,3 @@
-// Init controller
 var controller = new ScrollMagic({
   globalSceneOptions: {
     duration: $('main .row').height(),
@@ -7,35 +6,31 @@ var controller = new ScrollMagic({
   }
 });
 
-var atomic_scrollinks = {
-  // [hash-value] : [link-id]
-  'atomic-colors': 'atomic-colors',
-  icons: 'icons',
-  helpers: 'helpers',
-  utilities: 'utilities',
-  typography: 'typography',
-  buttons: 'buttons',
-  forms: 'forms',
-  navigation: 'nav',
-  patterns: 'patterns'
-}
+var atomic_scrollinks = {};
 
+$('#nav').children().each(function(i) {
+
+  var href = $(this).attr('href').replace('#', ''),
+      id   = $(this).attr('id'),
+      key  = href;
+
+  atomic_scrollinks[key] = id;
+
+});
 
 for (var prop in atomic_scrollinks) {
-  console.log(atomic_scrollinks[prop]);
   new ScrollScene({triggerElement: '#' + prop})
                 .setClassToggle('#' + atomic_scrollinks[prop], 'active')
                 .addTo(controller);
 }
 
-// Change behaviour of controller
-// to animate scroll instead of jump
+
 controller.scrollTo(function(target) {
 
   TweenMax.to(window, 0.5, {
     scrollTo : {
-      y: target,
-      autoKill: true // Allow scroll position to change outside itself
+      y: target - $('.row').height() / 8,
+      autoKill: true
     },
     ease : Cubic.easeInOut
   });
@@ -43,19 +38,16 @@ controller.scrollTo(function(target) {
 });
 
 
-//  Bind scroll to anchor links
-$(document).on("click", "a[href^=#]", function(e) {
+$(document).on('click', 'a[href^=#]', function(e) {
   var id = $(this).attr("href");
 
   if($(id).length > 0) {
     e.preventDefault();
 
-    // trigger scroll
     controller.scrollTo(id);
 
-    // If supported by the browser we can also update the URL
     if (window.history && window.history.pushState) {
-      history.pushState("", document.title, id);
+      history.pushState('', document.title, id);
     }
   }
 
