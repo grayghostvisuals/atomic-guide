@@ -12,7 +12,7 @@ var atomic_scrollinks = {
   'atomic-colors': 'atomic-colors',
   icons: 'icons',
   helpers: 'helpers',
-  utilities: 'utility',
+  utilities: 'utilities',
   typography: 'typography',
   buttons: 'buttons',
   forms: 'forms',
@@ -22,6 +22,7 @@ var atomic_scrollinks = {
 
 
 for (var prop in atomic_scrollinks) {
+  console.log(atomic_scrollinks[prop]);
   new ScrollScene({triggerElement: '#' + prop})
                 .setClassToggle('#' + atomic_scrollinks[prop], 'active')
                 .addTo(controller);
@@ -33,7 +34,7 @@ controller.scrollTo(function(target) {
 
   TweenMax.to(window, 0.5, {
     scrollTo : {
-      y: target - 75,
+      y: target,
       autoKill: true // Allow scroll position to change outside itself
     },
     ease : Cubic.easeInOut

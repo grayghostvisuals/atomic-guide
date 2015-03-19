@@ -1,16 +1,16 @@
-// App Variables
+// Atomic- Variables
 // ===============================================
 
-$tks-colors: (
+$atomic-colors: (
   white: #FFFFFF,
   athens-gray: #F7F7F8,
   gallery: #EEEEEE,
 
-  silver: #ADD5F7,
-  alto: #7FB2F0,
-  dusty-gray: #4E7AC7,
-  gray: #35478C,
-  boulder: #16193B,
+  sail: #ADD5F7,
+  jordy-blue: #7FB2F0,
+  indigo: #4E7AC7,
+  chambray: #35478C,
+  big-stone: #16193B,
 
   geraldine: #FF8589,
   froly: #EF7379,
@@ -21,7 +21,17 @@ $tks-colors: (
 // Atomic Guide
 // ===============================================
 
-@import "assembler/globals";
 @import "assembler/prism";
+@import "assembler/atomic-globals";
 @import "assembler/atomic-swatch";
 @import "assembler/index";
+
+
+// Atoms
+// ===============================================
+// Molecules
+// ===============================================
+// Organisms
+// ===============================================
+// Views
+// ===============================================

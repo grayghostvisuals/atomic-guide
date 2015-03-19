@@ -6,9 +6,9 @@
   // https://twitter.com/gryghostvisuals/status/572611473333043201
   // http://sassmeister.com/gist/89f3c3cc30a3e70713d3
   // http://www.codeshare.io/UIbrU
-  @for $i from 1 through length($tks-colors) {
+  @for $i from 1 through length($atomic-colors) {
     &:nth-of-type(#{$i}) {
-      fill: nth(nth($tks-colors, $i), 2);
+      fill: nth(nth($atomic-colors, $i), 2);
     }
   }
 }
