@@ -2,9 +2,13 @@
 
 ## Dependencies
 
-**Note** : Make sure you have the following installed…
+[node](http://nodejs.org) // [npm](https://www.npmjs.com) // [bower](http://bower.io)
 
-- [node](http://nodejs.org) & [npm](https://www.npmjs.com)
+### Tooling:
+
+ - HTML Templates : Assemble
+ - Styles : Sass
+ - Task Manager : Gulp
 
 ## Installation
 
