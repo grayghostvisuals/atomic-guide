@@ -1,27 +1,24 @@
-var controller = new ScrollMagic({
-  globalSceneOptions: {
-    duration: $('main .row').height(),
-    triggerHook: 0.2,
-    reverse: true
-  }
-});
+var controller = new ScrollMagic({ globalSceneOptions: { duration: 100 } });
 
-var atomic_scrollinks = {};
+var $atomic_nav       = document.getElementById('nav'),
+    $atomic_links     = $atomic_nav.children,
+    atomic_scrollinks = {};
 
-$('#nav').children().each(function(i) {
-
-  var href = $(this).attr('href').replace('#', ''),
-      id   = $(this).attr('id'),
+for (var i = 0, l = $atomic_links.length; i < l; i++) {
+  var href = $atomic_links[i].hash.replace('#', ''),
+      id   = $atomic_links[i].id,
       key  = href;
 
   atomic_scrollinks[key] = id;
+}
 
-});
-
-for (var prop in atomic_scrollinks) {
-  new ScrollScene({triggerElement: '#' + prop})
-                .setClassToggle('#' + atomic_scrollinks[prop], 'active')
-                .addTo(controller);
+for (var key in atomic_scrollinks) {
+  new ScrollScene({
+      duration: 100,
+      triggerElement: '#' + key
+    })
+    .setClassToggle('#' + atomic_scrollinks[key], 'active')
+    .addTo(controller);
 }
 
 
@@ -29,7 +26,7 @@ controller.scrollTo(function(target) {
 
   TweenMax.to(window, 0.5, {
     scrollTo : {
-      y: target - $('.row').height() / 8,
+      y: target,
       autoKill: true
     },
     ease : Cubic.easeInOut
@@ -38,17 +35,22 @@ controller.scrollTo(function(target) {
 });
 
 
-$(document).on('click', 'a[href^=#]', function(e) {
-  var id = $(this).attr("href");
+$atomic_nav.addEventListener('click', function(e) {
 
-  if($(id).length > 0) {
-    e.preventDefault();
+  if(e.target && e.target.nodeName == 'A') {
 
-    controller.scrollTo(id);
+    var id = e.target.hash;
 
-    if (window.history && window.history.pushState) {
-      history.pushState('', document.title, id);
+    if(id.length > 0) {
+      e.preventDefault();
+
+      controller.scrollTo(id);
+
+      if (window.history && window.history.pushState) {
+        history.pushState('', document.title, id);
+      }
     }
+
   }
 
 });

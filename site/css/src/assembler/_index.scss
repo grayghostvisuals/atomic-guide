@@ -17,13 +17,6 @@ body.atomic {
 }
 
 
-#atomic-colors {
-  > svg:hover {
-    cursor: pointer;
-  }
-}
-
-
 .atomic-hexoverlay._active {
   transform: translateX(0);
   opacity: 1;

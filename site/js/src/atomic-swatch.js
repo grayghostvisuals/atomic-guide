@@ -1,7 +1,8 @@
 // DOM Insertion
 // ======================================================
 
-$('body.atomic').append('<div class="atomic-hexoverlay"></div>');
+var atomic_hex_div = document.createElement('div');
+document.body.appendChild(atomic_hex_div).classList.add('atomic-hexoverlay');
 
 
 // References
@@ -24,6 +25,7 @@ function atomicRgb2Hex(rgb) {
 
 function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+
   return result ? {
       r: parseInt(result[1], 16),
       g: parseInt(result[2], 16),
@@ -35,7 +37,7 @@ function hexToRgb(hex) {
 // Color Swatch Event
 // ======================================================
 
-$('#atomic-colors svg').on('click', function(e) {
+$('#colors svg').on('click', function(e) {
 
   var atomic_fill       = $(this).css('fill'),
       atomic_hexvalue   = atomicRgb2Hex( atomic_fill ),
