@@ -1,14 +1,15 @@
-// DOM Insertion
-// ======================================================
-
-var atomic_hex_div = document.createElement('div');
-document.body.appendChild(atomic_hex_div).classList.add('atomic-hexoverlay');
-
-
 // References
 // ======================================================
 
-var $atomic_hexoverlay = $('.atomic-hexoverlay');
+var atomic_hex_div      = document.createElement('div'),
+    $atomic_hex_overlay = document.querySelectorAll('atomic-hexoverlay'),
+    $atomic_swatch      = document.getElementById('colors');
+
+
+// DOM Insertion
+// ======================================================
+
+document.body.appendChild(atomic_hex_div).classList.add('atomic-hexoverlay');
 
 
 // RGB2Hex Converter
@@ -37,9 +38,10 @@ function hexToRgb(hex) {
 // Color Swatch Event
 // ======================================================
 
-$('#colors svg').on('click', function(e) {
+$atomic_swatch.addEventListener('click', function(e) {
 
-  var atomic_fill       = $(this).css('fill'),
+  var atomic_target     = e.target.parentNode,
+      atomic_fill       = window.getComputedStyle(atomic_target).getPropertyValue('fill'),
       atomic_hexvalue   = atomicRgb2Hex( atomic_fill ),
       atomic_rgbchannel = atomic_fill,
       atomic_rgb        = atomic_rgbchannel;
@@ -48,32 +50,27 @@ $('#colors svg').on('click', function(e) {
                                 .replace(/ /g, '')
                                 .split(',');
 
-  $atomic_hexoverlay.addClass('_active');
+  if(atomic_target.nodeName === 'svg') {
 
-  // http://www.w3.org/TR/cssom/#dom-window-getcomputedstyle
-  // https://twitter.com/gryghostvisuals/status/578524169719123969
-  if(atomic_rgbchannel.length === 3) {
+    atomic_hex_div.classList.add('_active');
 
-    $atomic_hexoverlay.css({
-      'background': 'rgba('+ atomic_rgbchannel[0] + ',' + atomic_rgbchannel[1] + ',' + atomic_rgbchannel[2] + ', 0.95)'
-    });
+    // http://www.w3.org/TR/cssom/#dom-window-getcomputedstyle
+    // https://twitter.com/gryghostvisuals/status/578524169719123969
+    if(atomic_rgbchannel.length === 3) {
 
-    $atomic_hexoverlay.html('<p>' + atomic_hexvalue + '</p><b>Click Hex Code to Copy</b>');
+      atomic_hex_div.style.background = 'rgba('+ atomic_rgbchannel[0] + ',' + atomic_rgbchannel[1] + ',' + atomic_rgbchannel[2] + ', 0.95)';
+      atomic_hex_div.innerHTML = '<p>' + atomic_hexvalue + '</p><b>Click Hex Code to Copy</b>';
 
-  } else {
+    } else {
 
-    $(this).each(function(i) {
-
-      var atomic_hex = window.getComputedStyle(this).getPropertyValue('fill'),
+      var atomic_hex = window.getComputedStyle(atomic_target).getPropertyValue('fill'),
           atomic_rgb = hexToRgb(atomic_hex);
+      
+      atomic_hex_div.style.background = 'rgba('+ atomic_rgb.r + ',' + atomic_rgb.g + ',' + atomic_rgb.b +', .95)';
 
-      $atomic_hexoverlay.css({
-        'background' : 'rgba('+ atomic_rgb.r + ',' + atomic_rgb.g + ',' + atomic_rgb.b +', .95)'
-      });
+      atomic_hex_div.innerHTML = '<p>' + atomic_hex + '</p><b>Click Hex Code to Copy</b>';
 
-      $atomic_hexoverlay.html('<p>' + atomic_hex + '</p><b>Click Hex Code to Copy</b>');
-
-    });
+    }
 
   }
 
@@ -83,23 +80,21 @@ $('#colors svg').on('click', function(e) {
 // Clipboard Event
 // ======================================================
 
-$atomic_hexoverlay.on('click', function(e) {
-
-  var value = atomicRgb2Hex( $atomic_hexoverlay.css('background') );
+atomic_hex_div.addEventListener('click', function(e) {
 
   if(e.target.nodeName !== 'P') {
 
-    $atomic_hexoverlay.removeClass('_active');
+    this.classList.remove('_active');
 
   }
 
   if(e.target.nodeName === 'P') {
 
-    var atomic_hexprompt = window.prompt("Copy to clipboard: CTRL+C (CMD+C on macs)", atomicRgb2Hex( $('.atomic-swatch').css('background') ));
+    var atomic_hexprompt = window.prompt("Copy to clipboard: CTRL+C (CMD+C on macs)", e.target.innerText);
 
     if(atomic_hexprompt !== null) {
 
-      $atomic_hexoverlay.removeClass('_active');
+      this.classList.remove('_active');
 
     }
 
