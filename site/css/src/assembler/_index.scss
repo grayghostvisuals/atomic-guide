@@ -16,6 +16,17 @@ body.atomic {
   }
 }
 
+body.atomic > header {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  flex-flow: inherit;
+  justify-content: space-between;
+
+  a { text-decoration: none; }
+  a:hover { color: #A5D4F9; }
+}
+
 
 .atomic-hexoverlay._active {
   transform: translateX(0);
