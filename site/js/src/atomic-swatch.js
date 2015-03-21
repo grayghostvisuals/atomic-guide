@@ -12,7 +12,7 @@ var atomic_hex_div      = document.createElement('div'),
 document.body.appendChild(atomic_hex_div).classList.add('atomic-hexoverlay');
 
 
-// RGB2Hex Converter
+// Color Converters
 // ======================================================
 
 function atomicRgb2Hex(rgb) {
@@ -35,7 +35,7 @@ function hexToRgb(hex) {
 }
 
 
-// Color Swatch Event
+// Event
 // ======================================================
 
 $atomic_swatch.addEventListener('click', function(e) {
@@ -65,8 +65,8 @@ $atomic_swatch.addEventListener('click', function(e) {
 
       var atomic_hex = window.getComputedStyle(atomic_target).getPropertyValue('fill'),
           atomic_rgb = hexToRgb(atomic_hex);
-      
-      atomic_hex_div.style.background = 'rgba('+ atomic_rgb.r + ',' + atomic_rgb.g + ',' + atomic_rgb.b +', .95)';
+
+      atomic_hex_div.style.background = 'rgba('+ atomic_rgb.r + ',' + atomic_rgb.g + ',' + atomic_rgb.b +', 0.95)';
 
       atomic_hex_div.innerHTML = '<p>' + atomic_hex + '</p><b>Click Hex Code to Copy</b>';
 
@@ -90,7 +90,7 @@ atomic_hex_div.addEventListener('click', function(e) {
 
   if(e.target.nodeName === 'P') {
 
-    var atomic_hexprompt = window.prompt("Copy to clipboard: CTRL+C (CMD+C on macs)", e.target.innerText);
+    var atomic_hexprompt = window.prompt("Copy to clipboard: CTRL+C (CMD+C on macs)", e.target.innerHTML);
 
     if(atomic_hexprompt !== null) {
 
