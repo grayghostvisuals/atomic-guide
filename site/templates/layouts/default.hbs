@@ -37,7 +37,8 @@
     {{/any}}
 
     {{#any 'index' this.basename}}
-    <script class="atomic-js">$('button').on('click', function() {
+    <script class="atomic-js">var button = document.querySelector('button');
+button.addEventListener('click', function() {
   console.log('hello world');
 })</script>
     {{/any}}
