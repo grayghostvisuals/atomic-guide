@@ -46,13 +46,26 @@ then you can do the following…
 
   ```
   a:
-    modifierclass: active
-    state: checked
+  version: a
+  modifierclass: active
+  state: checked
   b:
+    version: b
     modifierclass: hidden
   ```
 
-3. Make the call from your file of choice like so…
+3. Setup your partial
+
+  ``includes/atoms/radio-input.hbs``
+  
+  ```
+  <label for="radio{{version}}" class="control radio {{modifierclass}}">
+    <input type="radio" id="radio{{version}}" name="radio" value="radio{{version}}" {{state}}>
+    <span class="control__indicator"></span> Radio Input
+  </label>
+  ```
+
+4. Make the call from your file of choice like so…
 
   ``templates/pages/index.hbs``
   
@@ -60,15 +73,6 @@ then you can do the following…
   {{> radio-input radio}}
   {{> radio-input radio.a}}
   {{> radio-input radio.b}}
-  ```
-  
-  ``includes/atoms/radio-input.hbs``
-  
-  ```
-  <label for="radio{{modifierclass}}" class="control radio">
-    <input type="radio" id="radio{{modifierclass}}" name="radio" value="radio-value{{modifierclass}}" {{state}}>
-    <span class="control__indicator"></span> Radio Input
-  </label>
   ```
 
 ## Conditions
@@ -79,3 +83,7 @@ Control scripts or anything really from appearing in your views like so…
 {{#any 'index single case' this.basename}}
 {{/any}}
 ```
+
+## What Else?
+
+Well for starters your HTML is cleansed automagically for code snippets including JavaScript without writing things twice. See index.hbs for further examples.
