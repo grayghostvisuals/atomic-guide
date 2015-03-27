@@ -1,0 +1,5 @@
+a:
+  modifierclass: active
+  state: checked
+b:
+  modifierclass: hidden
