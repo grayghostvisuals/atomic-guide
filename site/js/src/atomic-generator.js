@@ -7,6 +7,11 @@ var $atomic_html       = document.querySelectorAll('pre.language-html code')
     atomic_htmlsnippet = [],
     atomic_jsnippet    = [];
 
+
+// Markup
+// order matters!
+// ============================================================
+
 for(var i = 0, l = $atomic_html.length; i < l; i++) {
 
   atomic_htmlsnippet.push(
