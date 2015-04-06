@@ -1,4 +1,4 @@
-# Atomic Guide
+![Atomic Guide](https://dl.dropboxusercontent.com/u/41114960/github/atomic-guide/atomic-logo.svg)
 
 ## Dependencies
 

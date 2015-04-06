@@ -1,7 +1,9 @@
 html {
-  background: #F6F7F9;
   margin: 0 auto;
   max-width: 960px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1.5;
+  background: #F6F7F9;
 }
 
 
@@ -27,12 +29,11 @@ body.atomic > header {
   a:hover { color: #A5D4F9; }
 
   #logo-atomic {
-      width: 60px;
-      height: auto;
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 20px;
-    }
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
 }
 
 
