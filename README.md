@@ -1,14 +1,9 @@
 ![Atomic Guide](https://dl.dropboxusercontent.com/u/41114960/github/atomic-guide/atomic-logo.svg)
-
-## Dependencies
-
-[node](http://nodejs.org) // [npm](https://www.npmjs.com) // [bower](http://bower.io)
-
-### Tooling:
-
- - HTML Templates : Assemble
+--
+ - Templates : Assemble
  - Styles : Sass
  - Task Manager : Gulp
+ - Pkg Mgr: NPM & Bower
 
 ## Installation
 
