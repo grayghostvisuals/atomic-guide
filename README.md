@@ -87,3 +87,7 @@ Control scripts or anything really from appearing in your views like so…
 ## What Else?
 
 Well for starters your HTML is cleansed automagically for code snippets including JavaScript without writing things twice. See index.hbs for further examples.
+
+## Lastly
+
+Logo by [Cole Townsend](http://coletownsend.com). Copyright 2015. 

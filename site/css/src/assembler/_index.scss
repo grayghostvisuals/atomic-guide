@@ -25,6 +25,14 @@ body.atomic > header {
 
   a { text-decoration: none; }
   a:hover { color: #A5D4F9; }
+
+  #logo-atomic {
+      width: 60px;
+      height: auto;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 20px;
+    }
 }
 
 
