@@ -1,4 +1,4 @@
-// Atomic Vars
+// Atomic Guide
 // ===============================================
 
 $atomic-colors: (
@@ -17,25 +17,21 @@ $atomic-colors: (
   carnation: #F14F4F,
 );
 
-
-// Atomic Guide : required
-// ===============================================
-
 @import "assembler/prism";
 @import "assembler/atomic-globals";
 @import "assembler/atomic-swatch";
 @import "assembler/index";
 
 
-// Utilities
+// App Utilities
 // ===============================================
-// Atoms
+// App Atoms
 // ===============================================
-// Molecules
+// App Molecules
 // ===============================================
-// Organisms
+// App Organisms
 // ===============================================
-// Views
+// App Views
 // ===============================================
-// Helpers
+// App Helpers
 // ===============================================

@@ -16,6 +16,13 @@ body.atomic {
     margin: 20px 0;
     padding: 20px;
   }
+
+  > main[role="main"] .row h1 {
+    font-size: 1.25em;
+  }
+  > main[role="main"] .row header + h2 {
+    font-size: 1em;
+  }
 }
 
 body.atomic > header {
@@ -29,7 +36,7 @@ body.atomic > header {
   a:hover { color: #A5D4F9; }
 }
 
-#logo-atomic {
+#atomic-logo {
   height: auto;
   display: inline-block;
   vertical-align: middle;
@@ -80,8 +87,4 @@ body.atomic > header {
     text-align: center;
     text-transform: lowercase;
   }
-}
-
-svg {
-  height: 144px;
 }
