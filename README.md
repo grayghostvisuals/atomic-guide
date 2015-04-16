@@ -41,9 +41,9 @@ then you can do the following…
 
   ```
   a:
-  version: a
-  modifierclass: active
-  state: checked
+    version: a
+    modifierclass: active
+    state: checked
   b:
     version: b
     modifierclass: hidden
