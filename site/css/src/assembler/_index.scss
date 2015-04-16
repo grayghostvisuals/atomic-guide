@@ -3,7 +3,7 @@ html {
   max-width: 960px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue Regular", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1.5;
-  background: #F6F7F9;
+  background: #F4F5F6;
 }
 
 
@@ -20,10 +20,12 @@ body.atomic {
   > main[role="main"] .row h1 {
     font-size: 1.25em;
   }
+
   > main[role="main"] .row header + h2 {
     font-size: 1em;
   }
 }
+
 
 body.atomic > header {
   display: flex;
@@ -31,10 +33,8 @@ body.atomic > header {
   align-items: center;
   flex-flow: inherit;
   justify-content: space-between;
-
-  a { text-decoration: none; }
-  a:hover { color: #A5D4F9; }
 }
+
 
 #atomic-logo {
   height: auto;
@@ -44,19 +44,21 @@ body.atomic > header {
 
   path {
     fill: none;
-    stroke: #3BB7FF;
+    stroke: #012265;
   }
 
   circle {
-    fill: #F7F7F8;
-    stroke: #4946FC;
+    fill: #F4F5F6;
+    stroke: #09A3CA;
   }
 }
+
 
 .atomic-hexoverlay._active {
   transform: translateX(0) translateZ(0);
   opacity: 1;
 }
+
 
 .atomic-hexoverlay {
   display: flex;

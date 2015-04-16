@@ -88,7 +88,7 @@ gulp.task('sass', function() {
 
 assemble.layouts(paths.templates + '/layouts/*.hbs');
 assemble.partials(paths.templates + '/includes/**/*.hbs');
-assemble.pages(paths.templates + '/content/*.hbs');
+assemble.pages(paths.templates + '/pages/*.hbs');
 assemble.option('layout', 'default');
 assemble.data(paths.data + '/**/*.{json,yaml}');
 
@@ -175,9 +175,14 @@ gulp.task('watch', function() {
   ], ['sass']);
 
   gulp.watch([
-    paths.templates + '/**/**/*.hbs',
-    paths.site + '/index.html'
+    paths.templates + '/includes/**/*.hbs',
+    paths.templates + '/pages/*.hbs',
+    paths.templates + '/layouts/*.hbs'
   ], ['assemble']);
+
+  gulp.watch([
+    paths.site + '/includes/*.html'
+  ], [$.connect.reload()]);
 });
 
 
