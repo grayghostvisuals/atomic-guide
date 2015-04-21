@@ -27,7 +27,7 @@ for (var i = 0, l = $atomic_links.length; i < l; i++) {
 
 for (var key in atomic_scrollinks) {
   new ScrollMagic.Scene({
-      duration: 100,
+      duration: $('#' + key).height(),
       triggerElement: '#' + key
     })
     .setClassToggle('#' + atomic_scrollinks[key], 'active')
