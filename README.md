@@ -17,10 +17,6 @@ $ npm install && bower install
 
 ## Development
 
-```javascript
-$ npm start
-```
-
 Compiling and LiveReload
 
 ```javascript
@@ -124,7 +120,32 @@ The if statement that follows will produce true if the boolean for the environme
 
 ## What Else?
 
-Well for starters your HTML is cleansed automagically for code snippets including JavaScript without writing things twice. See index.hbs for further examples.
+### Code Blocks + Prism
+
+Here's an example from your assemble template to import a partial called headings that's also called from the code block. The class name on the `pre` tag tells Prism this is a block we would like it to style using html grammar.
+
+```markup
+{{> headings}}
+<pre class="language-html"><code>{{> headings}}</code></pre>
+```
+
+Here's an example using a JavaScript snippet.
+
+```markup
+{{> button}}
+<pre class="language-javascript"><code></code></pre>
+```
+
+The partial with the required JavaScript sets up the pre block to accept the JavaScript it will be injected with. The required JavaScript is included in your layout of choice and given a class of `atomic-js`.
+
+```javascript
+<script class="atomic-js">var button = document.querySelector('button');
+button.addEventListener('click', function() {
+console.log('hello world');
+})</script>
+```
+
+In the future we hope to remove the need to write this kind of block within the markup and use file reading with Node to inject the tags as needed and with the appropriate code.
 
 ## Credits
 
