@@ -1,8 +1,0 @@
-.sass-cache
-node_modules/
-*.log
-.DS_Store
-site/bower_components
-site/css/**/*.css
-site/*.html
-dist/

@@ -1,7 +1,0 @@
-a:
-  version: a
-  modifierclass: active
-  state: checked
-b:
-  version: b
-  modifierclass: hidden
