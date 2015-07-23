@@ -5,3 +5,4 @@ node_modules/
 site/bower_components
 site/css/**/*.css
 site/*.html
+dist/
