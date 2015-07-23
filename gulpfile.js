@@ -328,7 +328,7 @@ gulp.task('deploy', function() {
              .pipe($.ghPages(
                 $.if(env_flag === false,
                 { branch: 'staging' },
-                { branch: 'master'  })
+                { branch: 'production'  })
              ));
 });
 
