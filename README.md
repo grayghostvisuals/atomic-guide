@@ -1,5 +1,9 @@
 ![Atomic Guide](https://dl.dropboxusercontent.com/u/41114960/github/atomic-guide/atomic-logo.svg)
---
+
+![](https://dl.dropboxusercontent.com/u/41114960/github/atomic-guide/ag-preview.png)
+
+## Under The Hood
+
  - Templates : Assemble
  - Styles : Sass
  - Task Manager : Gulp
@@ -17,8 +21,31 @@ $ npm install && bower install
 $ npm start
 ```
 
+Compiling and LiveReload
+
+```javascript
+$ gulp
+```
+
+Production Build
+
+```javascript
+$ gulp build
+```
+
+Preview Production Build
+
+```javascript
+$ gulp preview
+```
+
+Cleanup
+
+```javascript
+$ gulp clean
+```
+
 ## Naming Convention
-[Read this discussion on naming](http://www.codeshare.io/XM00X)
 
 **Everything is name spaced and separated by a hyphen. BEM is the style of choice**
 
@@ -52,7 +79,7 @@ then you can do the following…
 3. Setup your partial
 
   ``includes/atoms/radio-input.hbs``
-  
+
   ```
   <label for="radio{{version}}" class="control radio {{modifierclass}}">
     <input type="radio" id="radio{{version}}" name="radio" value="radio{{version}}" {{state}}>
@@ -63,7 +90,7 @@ then you can do the following…
 4. Make the call from your file of choice like so…
 
   ``templates/pages/index.hbs``
-  
+
   ```
   {{> radio-input radio}}
   {{> radio-input radio.a}}
@@ -79,10 +106,26 @@ Control scripts or anything really from appearing in your views like so…
 {{/any}}
 ```
 
+You can also take advantage of the environment flag used by Assemble.
+
+```
+var env_flag = false;
+assemble.option('production', env_flag);
+```
+**`gulpfile.js`**
+
+The if statement that follows will produce true if the boolean for the environment variable above is set to true. Great for keeping out things like analytics and such.
+
+```
+{{#if production}}
+{{/if}}
+```
+**`template.hbs`**
+
 ## What Else?
 
 Well for starters your HTML is cleansed automagically for code snippets including JavaScript without writing things twice. See index.hbs for further examples.
 
-## Lastly
+## Credits
 
-Logo by [Cole Townsend](http://coletownsend.com). Copyright 2015. 
+Logo by [Cole Townsend](http://coletownsend.com). ©2015 and beyond.
