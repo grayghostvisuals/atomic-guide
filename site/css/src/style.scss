@@ -11,9 +11,10 @@ $atomic-colors: (
   big-stone: #002A64
 );
 
-@import "assembler/prism";
+@import "../../bower_components/normalize-scss/normalize";
 @import "assembler/atomic-globals";
 @import "assembler/atomic-swatch";
+@import "assembler/prism";
 @import "assembler/index";
 
 
