@@ -11,31 +11,33 @@
 
 ## Installation
 
+Installation instructions assume you have gulp and node w/npm installed globally in your system. You could also use `npm start` if you desire as the `package.json` file of this project supports that command.
+
 ```javascript
 $ npm install && bower install
 ```
 
 ## Development
 
-Compiling and LiveReload
+Start Development
 
 ```javascript
 $ gulp
 ```
 
-Production Build
+Build
 
 ```javascript
 $ gulp build
 ```
 
-Preview Production Build
+Preview Build
 
 ```javascript
 $ gulp preview
 ```
 
-Cleanup
+Clean Environment
 
 ```javascript
 $ gulp clean
@@ -43,10 +45,9 @@ $ gulp clean
 
 ## Naming Convention
 
-**Everything is name spaced and separated by a hyphen. BEM is the style of choice**
+Everything is name spaced and separated by a hyphen. BEM is the style of choice. We suggest using [Sass Guidelines](http://sass-guidelin.es/) for documenting your Sass code to keep consistency across teams.
 
 ```css
-/* BEM Convention */
 ns-component
 ns-component--modifier
 ns-component__child--modifier
@@ -54,10 +55,9 @@ ns-component__child--modifier
 
 ## Theming
 
-If you want to have variations on an input and keep things DRY
-then you can do the following…
+If you want to have variations on an input for example and keep things DRY then you can do the following…
 
-1. Create a ``.yaml`` file and place it inside your ``data`` directory.
+1. Create a ``modifier.yaml`` file and place it inside your ``data`` directory.
 2. Add data.
 
   ``data/modifier.yaml``
@@ -83,7 +83,7 @@ then you can do the following…
   </label>
   ```
 
-4. Make the call from your file of choice like so…
+4. Make the call from your template file of choice like so…
 
   ``templates/pages/index.hbs``
 
@@ -95,7 +95,7 @@ then you can do the following…
 
 ## Conditions
 
-Control scripts or anything really from appearing in your views like so…
+Control scripts, or anything desired from appearing in your templates like so…
 
 ```
 {{#any 'index single case' this.basename}}
@@ -120,9 +120,9 @@ The if statement that follows will produce true if the boolean for the environme
 
 ## What Else?
 
-### Code Blocks + Prism
+### Code Blocks
 
-Here's an example from your assemble template to import a partial called headings that's also called from the code block. The class name on the `pre` tag tells Prism this is a block we would like it to style using html grammar.
+Here's an example from your assemble template to import a partial called headings that's also called within the associated code block. The class name on the `pre` tag tells Prism this is a block we would like [Prism](http://prismjs.com) to style using html grammar.
 
 ```markup
 {{> headings}}
@@ -136,7 +136,7 @@ Here's an example using a JavaScript snippet.
 <pre class="language-javascript"><code></code></pre>
 ```
 
-The partial with the required JavaScript sets up the pre block to accept the JavaScript it will be injected with. The required JavaScript is included in your layout of choice and given a class of `atomic-js`.
+The partial with the required JavaScript sets up the pre block to accept the JavaScript it will be injected with. The required JavaScript is included in your layout of choice and it's `script` tag is given a class of `atomic-js`.
 
 ```javascript
 <script class="atomic-js">var button = document.querySelector('button');
@@ -145,7 +145,7 @@ console.log('hello world');
 })</script>
 ```
 
-In the future we hope to remove the need to write this kind of block within the markup and use file reading with Node to inject the tags as needed and with the appropriate code.
+In the future we hope to remove the need to write this kind of block within the markup and use something like file reading with Node.
 
 ## Credits
 
