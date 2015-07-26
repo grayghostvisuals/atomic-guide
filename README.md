@@ -95,14 +95,28 @@ If you want to have variations on an input for example and keep things DRY then 
 
 ## Conditions
 
-Control scripts, or anything desired from appearing in your templates like so…
+Control scripts, styles or anything desired from appearing in your templates. A few examples are:
 
 ```
 {{#any 'index single case' this.basename}}
 {{/any}}
 ```
 
-You can also take advantage of the environment flag used by Assemble.
+```
+{{#is 'index' this.basename}}
+{{/is}}
+```
+
+```
+{{#if 'single' this.basename}}
+{{/if}}
+```
+
+For further reading on conditionals see the [Handlebars](http://handlebarsjs.com/block_helpers.html) documentation.
+
+## Environment Control
+
+This project takes advantage of the environment flag used by Assemble.
 
 ```
 var env_flag = false;
