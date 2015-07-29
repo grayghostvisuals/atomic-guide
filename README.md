@@ -5,7 +5,7 @@
 ## Under The Hood
 
  - Templates : Assemble
- - Styles : Sass
+ - Styles : Sass (LibSass Port)
  - Task Manager : Gulp
  - Pkg Mgr: NPM & Bower
 
