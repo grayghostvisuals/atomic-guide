@@ -1,5 +1,4 @@
 ![](https://s3-us-west-2.amazonaws.com/s.cdpn.io/392/atomic-logo.svg)
-![](https://s3-us-west-2.amazonaws.com/s.cdpn.io/392/atomic-guide.png)
 
 ## Under The Hood
 
