@@ -1,6 +1,5 @@
-![Atomic Guide](https://dl.dropboxusercontent.com/u/41114960/github/atomic-guide/atomic-logo.svg)
-
-![](https://dl.dropboxusercontent.com/u/41114960/github/atomic-guide/ag-preview.png)
+![](https://s3-us-west-2.amazonaws.com/s.cdpn.io/392/atomic-logo.svg)
+![](https://s3-us-west-2.amazonaws.com/s.cdpn.io/392/atomic-guide.png)
 
 ## Under The Hood
 
